@@ -1,40 +1,74 @@
 
 Fuzzy.rb,0
 
-MembershipFunction.rb,668
-module FuzzyFuzzy12,157
-  class MembershipFunctionMembershipFunction13,170
-    def format_all( show_method)format_all44,636
-    def print_allprint_all52,846
-    def write_all( fname)write_all56,918
-  class TriangleMembershipFunction < MembershipFunctionTriangleMembershipFunction65,1054
-    def initialize( center, width)initialize66,1110
-    def alpha=(value)alpha=73,1255
-    def min_pointmin_point77,1329
-    def max_pointmax_point81,1383
-    def gradientgradient85,1437
-    def areaarea98,1826
-    def weightweight103,1932
-    def right_up( x)right_up108,2008
-    def right_down( x)right_down113,2134
-    def value( x)value117,2226
+FuzzyOperation.rb,499
+module FuzzyFuzzy13,184
+  module OperationOperation14,197
+    def infimum( src1, src2)infimum19,335
+    def supremum( src1, src2)supremum23,403
+    def area_method( mf1, mf2)area_method30,580
+    def centroid_method( mf1, mf2)centroid_method34,698
+    def to_small( small_table, output_membership_table)to_small39,792
+    def calc_gravity(area_table)calc_gravity49,1088
+    def product_sum_gravity_method( fum1, arg1, fum2, arg2, outfam, outtable)product_sum_gravity_method64,1362
 
-MembershipValue.rb,250
+LabelList.rb,105
+module FuzzyFuzzy12,144
+  class LabelListLabelList13,157
+    def initialize( list)initialize14,175
+
+MembershipFunction.rb,252
+module FuzzyFuzzy13,158
+  class MembershipFunctionMembershipFunction14,171
+    def weighted_areaweighted_area45,643
+    def format_all( show_method)format_all50,720
+    def print_allprint_all58,930
+    def write_all( fname)write_all62,1002
+
+MembershipFunctionFamily.rb,217
+module FuzzyFuzzy12,228
+  class MembershipFunctionFamilyMembershipFunctionFamily13,241
+    def initialize( family)initialize14,274
+    def get_function( key)get_function18,341
+    def values( x)values22,400
+
+MembershipFunctionTable.rb,231
+module FuzzyFuzzy11,161
+  class MembershipFunctionTableMembershipFunctionTable12,174
+    def initialize(table)initialize13,206
+    def MembershipFunctionTable.from_outtable( function_family, fuzzy_table)from_outtable17,262
+
+MembershipValue.rb,334
 module FuzzyFuzzy12,154
   class MembershipValueMembershipValue13,167
     def initialize( value)initialize14,191
     def to_sto_s20,274
     def to_fto_f24,312
-    def <(other)<28,347
-    def >(other)>32,400
-    def <=>(other)<=>36,453
+    def *(other)*28,347
+    def <(other)<32,413
+    def >(other)>36,466
+    def <=>(other)<=>40,519
+    def algebraic_product(other)algebraic_product44,580
 
-Operation.rb,260
-module FuzzyFuzzy12,148
-  module OperationOperation13,161
-    def infimum( src1, src2)infimum18,299
-    def supremum( src1, src2)supremum22,367
-    def area_method( mf1, mf2)area_method29,544
-    def centroid_method( mf1, mf2)centroid_method33,662
+MembershipValueTable.rb,203
+module FuzzyFuzzy12,159
+  class MembershipValueTableMembershipValueTable13,172
+    def initialize(table)initialize14,201
+    def MembershipValueTable.from_product(vals1, vals2)from_product19,278
 
 TestCode.rb,0
+
+TriangleMembershipFunction.rb,518
+module FuzzyFuzzy12,193
+  class TriangleMembershipFunction < MembershipFunctionTriangleMembershipFunction13,206
+    def initialize( center, width)initialize14,262
+    def alpha=(value)alpha=21,407
+    def min_pointmin_point25,481
+    def max_pointmax_point29,535
+    def gradientgradient33,589
+    def alpha_cut(alpha)alpha_cut37,635
+    def areaarea53,1077
+    def weightweight58,1183
+    def right_up( x)right_up65,1261
+    def right_down( x)right_down70,1387
+    def value( x)value74,1479

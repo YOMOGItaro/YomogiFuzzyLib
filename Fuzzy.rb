@@ -11,9 +11,10 @@
 
 require 'MembershipValue'
 require 'MembershipFunction'
-require 'Table'
+require 'LabelList'
 require 'MembershipFunctionFamily'
-require 'Operation'
+require 'MembershipFunctionTable'
+require 'FuzzyOperation'
 
 
 

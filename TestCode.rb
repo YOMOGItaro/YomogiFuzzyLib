@@ -34,7 +34,7 @@ tblh = Hash.new{ |hash,key| hash[key] = {}}
 tblh[:low][  :near] = :neutral; tblh[:normal][  :near] = :break;   tblh[:high][  :near] = :break;
 tblh[:low][:normal] = :boost;   tblh[:normal][:normal] = :neutral; tblh[:high][:normal] = :break;
 tblh[:low][   :far] = :boost;   tblh[:normal][   :far] = :boost;   tblh[:high][   :far] = :neutral;
-tbl = Table.new(tblh)
+tbl = LabelList.new(tblh)
 
 File.open( "data/twod.dat", "w"){ |f|
   (0..80).each{ |x|
