@@ -1,5 +1,5 @@
 # /**
-#  * @file   Operation.rb
+#  * @file   FuzzyOperation.rb
 #  * @author hiuchi <hiuchi@PeatHein>
 #  * @date   Sat Dec  4 14:23:00 2010
 #  * 

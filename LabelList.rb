@@ -10,9 +10,9 @@
 
 
 module Fuzzy
-  class Table
-    def initialize( table)
-      @table = table
+  class LabelList
+    def initialize( list)
+      @list = list
     end
   end
 end
