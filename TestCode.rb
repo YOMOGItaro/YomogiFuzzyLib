@@ -14,14 +14,42 @@
 require 'Fuzzy'
 include Fuzzy
 
+    def algebraic_sum(other)
+      @value + other.value - (@value * other.value)
+    end
 
-tmf1 = TriangleMembershipFunction.new( 20,10)
-tmf2 = TriangleMembershipFunction.new( 30,10)
-pmf = ComplexMembershipFunction.new( tmf1, tmf2, :algebraic_product)
+    def limit_product(other)
+      [0.0,(@value + other.value - 1)].max
+    end
+
+    def limit_sum(other)
+      [1.0,(@value + other.value)].min
+    end
+
+    def limit_sub(other)
+      [0.0,(@value - other.value)].max
+    end
+
+
+tmf1 = TriangleMembershipFunction.new( 20,20)
+tmf2 = TriangleMembershipFunction.new( 30,20)
+sumf = ComplexMembershipFunction.new( tmf1, tmf2, :supremum)
+inmf = ComplexMembershipFunction.new( tmf1, tmf2, :infimum)
+apmf = ComplexMembershipFunction.new( tmf1, tmf2, :algebraic_product)
+asmf = ComplexMembershipFunction.new( tmf1, tmf2, :algebraic_sum)
+lpmf = ComplexMembershipFunction.new( tmf1, tmf2, :limit_product)
+lmmf = ComplexMembershipFunction.new( tmf1, tmf2, :limit_sum)
+lbmf = ComplexMembershipFunction.new( tmf1, tmf2, :limit_sub)
 
 MembershipFunctionOutput::write_all( "data/input_a.dat", tmf1)
 MembershipFunctionOutput::write_all( "data/input_b.dat", tmf2)
-MembershipFunctionOutput::write_all( "data/algebraic_product.dat", pmf)
+MembershipFunctionOutput::write_all( "data/supremum.dat", sumf)
+MembershipFunctionOutput::write_all( "data/infimum.dat", inmf)
+MembershipFunctionOutput::write_all( "data/algebraic_product.dat", apmf)
+MembershipFunctionOutput::write_all( "data/algebraic_sum.dat", asmf)
+MembershipFunctionOutput::write_all( "data/limit_product.dat", lpmf)
+MembershipFunctionOutput::write_all( "data/limit_sum.dat", lmmf)
+MembershipFunctionOutput::write_all( "data/limit_sub.dat", lbmf)
 
 
 # fam1 = MembershipFunctionFamily.new(

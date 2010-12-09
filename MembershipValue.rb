@@ -40,10 +40,36 @@ module Fuzzy
     def <=>(other)
       @value <=> other.value
     end
+
+    def supremum(other)
+      [@value,other.value].max
+    end
+
+    def infimum(other)
+      [@value,other.value].min
+    end
     
     def algebraic_product(other)
       @value * other.value
     end
+
+    def algebraic_sum(other)
+      @value + other.value - (@value * other.value)
+    end
+
+    def limit_product(other)
+      [0.0,(@value + other.value - 1)].max
+    end
+
+    def limit_sum(other)
+      [1.0,(@value + other.value)].min
+    end
+
+    def limit_sub(other)
+      [0.0,(@value - other.value)].max
+    end
+
+    
     
   end
 
