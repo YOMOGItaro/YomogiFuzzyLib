@@ -26,6 +26,16 @@ module Fuzzy
       new(ret)
     end
 
+    def MembershipValueTable.from_min(vals1, vals2)
+      ret = Hash.new{ |hash,key| hash[key] = {}}
+      vals1.each{ |key1, v1|
+        vals2.each{ |key2, v2|
+          ret[key1][key2] = [v1, v2].min
+        }
+      }
+      new(ret)
+    end
+
     def get_value( key1, key2)
       @table[key1][key2]
     end

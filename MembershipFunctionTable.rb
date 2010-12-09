@@ -28,7 +28,7 @@ module Fuzzy
       ret = Hash.new{ |hash,key| hash[key] = {}}
       @table.each{ |key1, hash|
         hash.each{ |key2, val|
-          ret[key1][key2] = val.alpha_cut(small_table.get_value( key1, key2))
+          ret[key1][key2] = val.alpha_cut(small_table.get_value( key1, key2).to_f)
         }
       }
       @table = ret

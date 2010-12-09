@@ -46,6 +46,18 @@ module Fuzzy
       outtable.gravity
     end
 
-    module_function :infimum, :supremum, :area_method, :centroid_method, :product_sum_gravity_method
+    def min_max_method( fum1, arg1, fum2, arg2, outfam, outtable)
+      vals1 = fum1.values( arg1)
+      vals2 = fum2.values( arg2)
+      xmap  = MembershipValueTable.from_min( vals1, vals2)
+      outtable = MembershipFunctionTable.from_outtable( outfam, outtable) 
+      outtable.to_small!( xmap)
+      outtable.gravity
+    end
+    
+    module_function :infimum, :supremum
+    module_function :area_method, :centroid_method 
+    module_function :product_sum_gravity_method
+    module_function :min_max_method
   end
 end

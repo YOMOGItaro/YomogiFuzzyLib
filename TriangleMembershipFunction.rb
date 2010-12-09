@@ -34,12 +34,6 @@ module Fuzzy
       @top / @width
     end
 
-    def alpha_cut(alpha)
-      ret = self.clone
-      ret.alpha = alpha
-
-      return ret
-    end
 
     # geometory area
     # Stotal = base    * height / 2
