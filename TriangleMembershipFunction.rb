@@ -18,10 +18,6 @@ module Fuzzy
       @alpha = MembershipValue.new(1.0)
     end
 
-    def alpha=(value)
-      @alpha = MembershipValue.new( value)
-    end
-
     def min_point
       @center - @width
     end

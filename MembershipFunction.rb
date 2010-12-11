@@ -44,6 +44,11 @@ module Fuzzy
       value(val).algebraic_product operand.value(val)
     end
 
+
+    def alpha=(value)
+      @alpha = MembershipValue.new( value)
+    end
+    
     def alpha_cut(alpha)
       ret = self.clone
       ret.alpha = alpha
@@ -89,4 +94,5 @@ end
 
 
 require 'TriangleMembershipFunction'
+require 'OnesideMembershipFunction'
 require 'ComplexMembershipFunction'

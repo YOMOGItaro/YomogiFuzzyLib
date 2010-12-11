@@ -11,6 +11,13 @@ require 'MembershipFunction'
 
 module Fuzzy
   class MembershipFunctionFamily
+
+    # **you use like this:
+    # fam1 = MembershipFunctionFamily.new(
+    #  {  :low    => OnesideMembershipFunction.new( 40, 20),
+    #     :normal => TriangleMembershipFunction.new( 40, 20),
+    #     :high   => OnesideMembershipFunction.new( 40, 60)})
+
     def initialize( family)
       @family = family # Hash
     end
@@ -18,7 +25,9 @@ module Fuzzy
     def get_function( key)
       @family[key]
     end
-    
+  
+    # x: input value for MembershipFunction
+    # return: each MenbershipFunction(x)'s value formed hash
     def values( x)
       values = Hash.new
       @family.each{ |key,f|

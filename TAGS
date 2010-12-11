@@ -1,29 +1,37 @@
 
+ComplexMembershipFunction.rb,198
+module FuzzyFuzzy13,193
+  class ComplexMembershipFunction < MembershipFunctionComplexMembershipFunction14,206
+    def initialize( mf1, mf2, operate)initialize16,266
+    def valuevalue37,520
+
 Fuzzy.rb,0
 
-FuzzyOperation.rb,499
+FuzzyOperation.rb,461
 module FuzzyFuzzy13,184
   module OperationOperation14,197
     def infimum( src1, src2)infimum19,335
     def supremum( src1, src2)supremum23,403
     def area_method( mf1, mf2)area_method30,580
     def centroid_method( mf1, mf2)centroid_method34,698
-    def to_small( small_table, output_membership_table)to_small39,792
-    def calc_gravity(area_table)calc_gravity49,1088
-    def product_sum_gravity_method( fum1, arg1, fum2, arg2, outfam, outtable)product_sum_gravity_method64,1362
+    def product_sum_gravity_method( fum1, arg1, fum2, arg2, outfam, outtable)product_sum_gravity_method40,803
+    def min_max_method( fum1, arg1, fum2, arg2, outfam, outtable)min_max_method49,1149
 
 LabelList.rb,105
 module FuzzyFuzzy12,144
   class LabelListLabelList13,157
     def initialize( list)initialize14,175
 
-MembershipFunction.rb,252
+MembershipFunction.rb,440
 module FuzzyFuzzy13,158
   class MembershipFunctionMembershipFunction14,171
-    def weighted_areaweighted_area45,643
-    def format_all( show_method)format_all50,720
-    def print_allprint_all58,930
-    def write_all( fname)write_all62,1002
+    def algebraic_product( operand, val)algebraic_product43,613
+    def alpha_cut(alpha)alpha_cut47,717
+    def weighted_areaweighted_area54,816
+  module MembershipFunctionOutputMembershipFunctionOutput59,877
+    def format_all( mf, show_method)format_all61,937
+    def print_all( mf)print_all69,1160
+    def write_all( fname, mf)write_all73,1241
 
 MembershipFunctionFamily.rb,217
 module FuzzyFuzzy12,228
@@ -32,11 +40,13 @@ module FuzzyFuzzy12,228
     def get_function( key)get_function18,341
     def values( x)values22,400
 
-MembershipFunctionTable.rb,231
+MembershipFunctionTable.rb,311
 module FuzzyFuzzy11,161
   class MembershipFunctionTableMembershipFunctionTable12,174
     def initialize(table)initialize13,206
     def MembershipFunctionTable.from_outtable( function_family, fuzzy_table)from_outtable17,262
+    def to_small!( small_table)to_small!27,561
+    def gravitygravity37,834
 
 MembershipValue.rb,334
 module FuzzyFuzzy12,154
@@ -50,15 +60,17 @@ module FuzzyFuzzy12,154
     def <=>(other)<=>40,519
     def algebraic_product(other)algebraic_product44,580
 
-MembershipValueTable.rb,203
+MembershipValueTable.rb,319
 module FuzzyFuzzy12,159
   class MembershipValueTableMembershipValueTable13,172
     def initialize(table)initialize14,201
     def MembershipValueTable.from_product(vals1, vals2)from_product19,278
+    def MembershipValueTable.from_min(vals1, vals2)from_min29,521
+    def get_value( key1, key2)get_value39,765
 
 TestCode.rb,0
 
-TriangleMembershipFunction.rb,518
+TriangleMembershipFunction.rb,475
 module FuzzyFuzzy12,193
   class TriangleMembershipFunction < MembershipFunctionTriangleMembershipFunction13,206
     def initialize( center, width)initialize14,262
@@ -66,9 +78,8 @@ module FuzzyFuzzy12,193
     def min_pointmin_point25,481
     def max_pointmax_point29,535
     def gradientgradient33,589
-    def alpha_cut(alpha)alpha_cut37,635
-    def areaarea53,1077
-    def weightweight58,1183
-    def right_up( x)right_up65,1261
-    def right_down( x)right_down70,1387
-    def value( x)value74,1479
+    def areaarea47,979
+    def weightweight52,1085
+    def right_up( x)right_up59,1163
+    def right_down( x)right_down64,1289
+    def value( x)value68,1381
