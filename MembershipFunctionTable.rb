@@ -16,11 +16,10 @@ module Fuzzy
 
     def MembershipFunctionTable.from_outtable( function_family, fuzzy_table)
       ret = Hash.new{ |hash,key| hash[key] = {}}
-      fuzzy_table.each{|key1, hash|
-        hash.each{ |key2, val|
+      fuzzy_table.each{ |key1,key2,val|
           ret[key1][key2] = function_family.get_function(val)
-        }
       }
+      
        new( ret)
     end
 

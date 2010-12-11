@@ -67,7 +67,7 @@ def testPSGMethod
         f.print "\t"
         f.print y
         f.print "\t"
-        f.print Operation::min_max_method( fam1, x, fam2, y, fout, tblh)
+        f.print Operation::min_max_method( fam1, x, fam2, y, fout, tbl)
         #f.print Operation::product_sum_gravity_method( fam1, x, fam2, y, fout, tblh)
         f.print "\n"
       }

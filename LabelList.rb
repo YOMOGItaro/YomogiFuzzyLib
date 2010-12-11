@@ -14,5 +14,13 @@ module Fuzzy
     def initialize( list)
       @list = list
     end
+    
+    def each
+      @list.each{ |key1, hash|
+        hash.each{ |key2, val|
+          yield key1, key2, val
+        }
+      }
+    end
   end
 end
